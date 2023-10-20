@@ -45,8 +45,6 @@ while true do
 
         if not isNumber(num2) then
             print("Enter valid number!")
-        elseif num2 == 0 then
-            print("My friend, you can't divide BY ZERO!")
         else
             break
         end
