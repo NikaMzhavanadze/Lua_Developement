@@ -18,9 +18,7 @@ while true do
     if operation == "off" then
         print("Exiting")
         break
-    end
-
-    if not operations[operation] then
+    elseif not operations[operation] then
         print("ENTER VALID OPERATION!")
 
         goto continue
@@ -38,11 +36,10 @@ while true do
     end
 
     while true do
-        if operation ~= "^2" and operation ~= "^3" then
+        if (operation ~= "^2" and operation ~= "^3") then
             io.write("Enter second number: ")
             num2 = io.read()
         end
-
         if not isNumber(num2) then
             print("Enter valid number!")
         else
@@ -51,6 +48,12 @@ while true do
     end
 
     result = operations[operation](num1, num2)
+
+    if result == math.huge then
+        print("Can't devide by zero dummy!")
+        goto continue
+    end
+
     print("Result: " .. result)
 
     ::continue::
